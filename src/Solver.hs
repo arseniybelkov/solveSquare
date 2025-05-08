@@ -8,9 +8,13 @@ kEpsilon :: Double
 kEpsilon = 1e-10
 
 
+isZero :: Double -> Bool
+isZero x = abs x < kEpsilon
+
+
 solveSquare :: Double -> Double -> Double -> Roots
 solveSquare a b c 
-    | abs a < kEpsilon = maybe NoRoots SingleRoot (solveLinear b c)
+    | isZero a = maybe NoRoots SingleRoot (solveLinear b c)
     | otherwise = findQuadraticRoots a b c
 
 
@@ -30,5 +34,5 @@ calculateDisc a b c
 solveLinear :: Double -> Double -> Maybe Double
 -- ax + b = 0
 solveLinear a b
-    | abs a < kEpsilon = Nothing
+    | isZero a = Nothing
     | otherwise = Just (-b / a)
