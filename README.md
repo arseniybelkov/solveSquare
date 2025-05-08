@@ -1,5 +1,5 @@
 # solveSquare
-Noob programming in Haskell
+Solve quadratic equations using Haskell.  
 
 ## Usage  
 You'll need [`ghc`](https://www.haskell.org/get-started/#set-up-a-haskell-development-environment). After installing it, run:  
